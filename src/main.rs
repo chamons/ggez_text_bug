@@ -30,7 +30,10 @@ impl EventHandler for MyGame {
 
         let mut text = Text::new("Hello Centered World");
         text.set_bounds(Vec2::new(400.0, 400.0))
-            .set_layout(TextLayout::center());
+            .set_layout(TextLayout {
+                h_align: TextAlign::Middle,
+                v_align: TextAlign::Begin,
+            });
         canvas.draw(&text, Vec2::new(20.0, 20.0));
 
         let square_size = Rect::new(0.0, 0.0, 400.0, 400.0);
